@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - 'main'
+      - ['main', 'explore' ]
 
 jobs:
   linux:
@@ -24,3 +24,8 @@ jobs:
         run: |
           rm -fr .build | echo "Removed build folder"
           swift build -c release --target RHVoice
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-build
+          path: .build/release/
