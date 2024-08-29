@@ -2,7 +2,8 @@ name: Build
 on:
   push:
     branches:
-      - ['main', 'explore' ]
+      - 'main'
+      - 'explore'
 
 jobs:
   linux:
